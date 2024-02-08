@@ -1,8 +1,8 @@
-import '../scss/layout/CharacterCard.scss';
+import '../../scss/layout/CharacterCard.scss';
 
 function CharacterCard({ data }) {
   return (
-    <article className="card">
+    <article className="card" id={data.id}>
       <img
         src={
           data.image !== ''
