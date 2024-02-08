@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  width: 100px;
+  align-items: flex-start;
+
+  &__image {
+    width: 100px;
+    height: 150px;
+  }
+  &__text {
+    text-align: center;
+    padding: 5px;
+  }
+}
