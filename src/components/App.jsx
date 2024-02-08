@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import '../scss/App.scss';
 import apiData from '../services/api';
 import CharacterList from './CharacterList';
-import Filters from './Filters';
+import Filters from './filters/Filters';
 
 function App() {
-  const [characters, setCharacters] = useState({});
+  const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState('');
+  const [filterHouse, setFilterHouse] = useState('Gryffindor');
 
   useEffect(() => {
     apiData().then((data) => {
@@ -14,11 +16,41 @@ function App() {
     });
   }, []);
 
+  const handleName = (value) => {
+    setFilterName(value);
+  };
+
+  const handleHouse = (value) => {
+    setFilterHouse(value);
+  };
+
+  const filterCharacters = characters
+    .filter((char) =>
+      char.name.toLowerCase().includes(filterName.toLowerCase())
+    )
+    .filter((char) => char.house === filterHouse);
+
+  const orderName = filterCharacters.sort((first, second) => {
+    const firstName = first.name;
+    const secondName = second.name;
+    if (firstName < secondName) {
+      return -1;
+    }
+    if (firstName > secondName) {
+      return 1;
+    }
+    return 0;
+  });
+
   return (
     <div>
       <h1>Hola mundo</h1>
-      <Filters />
-      <CharacterList data={characters} />
+      <Filters
+        handleName={handleName}
+        filterName={filterName}
+        handleHouse={handleHouse}
+      />
+      <CharacterList data={filterCharacters} />
     </div>
   );
 }
