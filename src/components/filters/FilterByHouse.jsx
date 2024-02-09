@@ -11,6 +11,7 @@ function FilterByHouse({ handleHouse }) {
         <option value="Ravenclaw">Ravenclaw</option>
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuf</option>
+        <option value="">Otros</option>
       </select>
     </>
   );

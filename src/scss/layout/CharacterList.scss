@@ -1,18 +1,34 @@
 .characters {
-  background-color: lightgray;
+  &__notFound {
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px 15px;
-    background-color: blue;
     &--card {
       width: 150px;
       height: 250px;
-      background-color: green;
+
       display: flex;
       justify-content: center;
       padding: 20px 0;
     }
   }
+}
+
+.Gryffindor {
+  background-color: #a72954;
+}
+.Slytherin {
+  background-color: #0d7a6f;
+}
+.Ravenclaw {
+  background-color: #1059ad;
+}
+.Hufflepuff {
+  background-color: #f0b30d;
 }

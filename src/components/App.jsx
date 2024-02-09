@@ -6,17 +6,24 @@ import CharacterList from './Characters/CharacterList';
 import Filters from './filters/Filters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetail from './Characters/CharacterDetail';
+import local from '../services/localStorage';
+import Header from './Header';
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState('');
+  const [filterName, setFilterName] = useState(local.get('name', ''));
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
+  const [filterGender, setFilterGender] = useState('');
 
   useEffect(() => {
     apiData().then((data) => {
       setCharacters(data);
     });
   }, []);
+
+  useEffect(() => {
+    local.set('name', filterName);
+  });
 
   const handleName = (value) => {
     setFilterName(value);
@@ -26,11 +33,24 @@ function App() {
     setFilterHouse(value);
   };
 
+  const handleGender = (value) => {
+    setFilterGender(value);
+  };
+
   const filterCharacters = characters
     .filter((char) =>
       char.name.toLowerCase().includes(filterName.toLowerCase())
     )
     .filter((char) => char.house === filterHouse)
+    .filter((char) => {
+      if (filterGender === 'female') {
+        return char.gender === 'female';
+      } else if (filterGender === 'male') {
+        return char.gender === 'male';
+      } else {
+        return true;
+      }
+    })
     .sort((first, second) => {
       const firstName = first.name;
       const secondName = second.name;
@@ -43,16 +63,38 @@ function App() {
       return 0;
     });
 
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    setFilterName('');
+    setFilterHouse('Gryffindor');
+    setFilterGender('');
+  };
+
   return (
     <>
-      <h1>Hola mundo</h1>
-      <Filters
+      <Header
         handleName={handleName}
         filterName={filterName}
         handleHouse={handleHouse}
+        handleGender={handleGender}
+        filterGender={filterGender}
+        handleReset={handleReset}
       />
+      {/* <Filters
+        handleName={handleName}
+        filterName={filterName}
+        handleHouse={handleHouse}
+        handleGender={handleGender}
+        filterGender={filterGender}
+      /> */}
+
       <Routes>
-        <Route path="/" element={<CharacterList data={filterCharacters} />} />
+        <Route
+          path="/"
+          element={
+            <CharacterList data={filterCharacters} filterName={filterName} />
+          }
+        />
         <Route
           path="/details/:urlId"
           element={<CharacterDetail data={characters} />}
