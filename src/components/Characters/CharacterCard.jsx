@@ -1,9 +1,9 @@
 import '../../scss/layout/CharacterCard.scss';
-import sinImg from '../../images/sinImg.png';
+import sinImg from '../../images/noImg.png';
 
-function CharacterCard({ data }) {
+function CharacterCard({ data, style }) {
   return (
-    <article className="card" id={data.id}>
+    <article className={style} id={data.id}>
       <img
         src={data.image !== '' ? data.image : sinImg}
         alt={data.name}

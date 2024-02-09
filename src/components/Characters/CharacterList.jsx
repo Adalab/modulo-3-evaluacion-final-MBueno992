@@ -14,9 +14,8 @@ function CharacterList({ data, filterName }) {
   const dataList = data.map((char) => {
     return (
       <li key={char.id} className={`characters__list--card ${char.house}`}>
-        <Link to={`/details/${char.id}`}>
-          {' '}
-          <CharacterCard data={char} />
+        <Link to={`/details/${char.id}`} className="link">
+          <CharacterCard data={char} style="card" />
         </Link>
       </li>
     );

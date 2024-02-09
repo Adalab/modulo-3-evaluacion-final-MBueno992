@@ -1,5 +1,6 @@
-import { useParams } from 'react-router-dom';
-import CharacterCard from './CharacterCard';
+import { Link, useParams } from 'react-router-dom';
+
+import CardDetail from './CardDetail';
 
 function CharacterDetail({ data }) {
   const { urlId } = useParams();
@@ -7,8 +8,13 @@ function CharacterDetail({ data }) {
   const cardData = data.find((char) => char.id === urlId);
 
   return (
-    <section>
-      <CharacterCard data={cardData} />
+    <section className="detailPage">
+      <Link to="/">
+        <button className="detailPage__btn">
+          <i className="fa-solid fa-wand-sparkles"></i> Volver
+        </button>
+      </Link>
+      <CardDetail data={cardData} />
     </section>
   );
 }

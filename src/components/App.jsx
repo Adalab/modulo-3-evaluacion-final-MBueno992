@@ -72,27 +72,23 @@ function App() {
 
   return (
     <div className="page">
-      <Header
-        handleName={handleName}
-        filterName={filterName}
-        handleHouse={handleHouse}
-        handleGender={handleGender}
-        filterGender={filterGender}
-        handleReset={handleReset}
-      />
-      {/* <Filters
-        handleName={handleName}
-        filterName={filterName}
-        handleHouse={handleHouse}
-        handleGender={handleGender}
-        filterGender={filterGender}
-      /> */}
+      <Header />
 
       <Routes>
         <Route
           path="/"
           element={
-            <CharacterList data={filterCharacters} filterName={filterName} />
+            <>
+              <Filters
+                handleName={handleName}
+                filterName={filterName}
+                handleHouse={handleHouse}
+                handleGender={handleGender}
+                filterGender={filterGender}
+                handleReset={handleReset}
+              />
+              <CharacterList data={filterCharacters} filterName={filterName} />
+            </>
           }
         />
         <Route
@@ -105,5 +101,3 @@ function App() {
 }
 
 export default App;
-
-//https://www.bing.com/images/create/una-imagen-realista-con-temc3a1tica-harry-potter-en-l/1-65c506da0a7f4233b95eacb002364f99?id=30ips%2bK9PrhwRUXAbRJNFQ%3d%3d&view=detailv2&idpp=genimg&idpclose=1&FORM=SYDBIC
