@@ -1,16 +1,66 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-image: url(/src/images/mobileHeader.png);
-  background-size: cover;
+  height: 270px;
+  gap: 20px;
+  background-image: url(/src/images/escudo.png);
   background-position: center;
-  height: 320px;
+  background-size: 70px;
+  background-position-y: 10%;
+  background-repeat: no-repeat;
   @media (min-width: 768px) {
-    background-image: url(/src/images/header.png);
+    height: 450px;
+    background-position-y: 10%;
+    background-size: 170px;
   }
-  &__filters {
-    color: black;
-    font-size: 2rem;
+  @media (min-width: 1024px) {
+    background-position-y: 12%;
+    background-size: 230px;
+  }
+  &__houses {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    @media (min-width: 768px) {
+      padding: 0 15px;
+    }
+    @media (min-width: 768px) {
+      padding: 0 50px;
+    }
+    &--flag {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 5px;
+      @media (min-width: 768px) {
+        gap: 15px;
+      }
+      img {
+        width: 50px;
+        @media (min-width: 768px) {
+          width: 100px;
+        }
+        @media (min-width: 1024px) {
+          width: 130px;
+        }
+      }
+    }
+    &--school {
+      width: 100px;
+      height: 20px;
+      position: relative;
+      transform: translateY(110px);
+      @media (min-width: 768px) {
+        height: 50px;
+        width: 250px;
+        transform: translateY(240px);
+      }
+      @media (min-width: 1024px) {
+        height: 70px;
+        width: 350px;
+        transform: translateY(300px);
+      }
+    }
   }
 }

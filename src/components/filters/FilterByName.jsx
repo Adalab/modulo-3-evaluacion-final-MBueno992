@@ -6,8 +6,8 @@ function FilterByName({ handleName, filterName }) {
   };
 
   return (
-    <label>
-      Buscar por nombre:
+    <label className="filters__name">
+      Buscar por nombre
       <input
         type="text"
         name="name"

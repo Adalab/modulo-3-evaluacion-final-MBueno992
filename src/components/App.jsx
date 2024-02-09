@@ -71,7 +71,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="page">
       <Header
         handleName={handleName}
         filterName={filterName}
@@ -100,7 +100,7 @@ function App() {
           element={<CharacterDetail data={characters} />}
         />
       </Routes>
-    </>
+    </div>
   );
 }
 

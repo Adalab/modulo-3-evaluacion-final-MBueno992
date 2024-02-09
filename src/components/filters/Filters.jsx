@@ -1,7 +1,7 @@
 import FilterByGender from './FilterByGender';
 import FilterByHouse from './FilterByHouse';
 import FilterByName from './FilterByName';
-import ResetFilters from './ResetFilters';
+import '../../scss/layout/Filters.scss';
 
 function Filters({
   handleName,
@@ -12,11 +12,23 @@ function Filters({
   handleReset,
 }) {
   return (
-    <form className="header__filters">
+    <form className="filters">
       <FilterByName handleName={handleName} filterName={filterName} />
       <FilterByHouse handleHouse={handleHouse} />
-      <FilterByGender handleGender={handleGender} filterGender={filterGender} />
-      <ResetFilters handleReset={handleReset} />
+      <div className="filters__reset">
+        <FilterByGender
+          handleGender={handleGender}
+          filterGender={filterGender}
+        />
+        <button
+          className="filters__reset--btn"
+          onClick={(ev) => {
+            handleReset(ev);
+          }}
+        >
+          Reset
+        </button>
+      </div>
     </form>
   );
 }

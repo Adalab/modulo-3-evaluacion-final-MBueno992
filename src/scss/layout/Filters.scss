@@ -1,0 +1,103 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+
+  @media (min-width: 860px) {
+    flex-direction: row;
+    margin: 20px auto;
+    font-size: 1.4rem;
+  }
+  &__reset {
+    display: flex;
+    gap: 15px;
+    &--btn {
+      padding: 3px 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: rgba(white, 0.7);
+      &:hover {
+        animation: btnReset 0.3s ease 0s 1 normal forwards;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          270deg,
+          rgba(240, 179, 13, 0.681) 0%,
+          rgba(240, 179, 13, 0.873) 60%
+        );
+        color: rgb(4, 4, 38);
+        @keyframes btnReset {
+          0% {
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            transform: scale(1) translateY(0);
+          }
+
+          100% {
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.35);
+            transform: scale(1.1) translateY(-5px);
+          }
+        }
+      }
+    }
+  }
+  &__name {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    input {
+      border-radius: 10px;
+      padding: 4px;
+      border: none;
+      background-color: rgba(white, 0.6);
+      @media (min-width: 768px) {
+        padding: 5px;
+      }
+      &::placeholder {
+        padding: 5px;
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 2px 2px 3px 3px rgba(white, 0.65);
+      }
+    }
+  }
+  &__house {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    select {
+      width: 120px;
+      border-radius: 10px;
+      padding: 2px;
+      background-color: rgba(white, 0.6);
+      @media (min-width: 768px) {
+        padding: 5px;
+      }
+      &:focus {
+        box-shadow: 2px 2px 3px 3px rgba(white, 0.65);
+        background-color: white;
+        outline: none;
+      }
+      option {
+        background-color: rgba(white, 0.8);
+      }
+    }
+  }
+  &__gender {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &--radio {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      color: rgba(white, 0.6);
+    }
+  }
+}

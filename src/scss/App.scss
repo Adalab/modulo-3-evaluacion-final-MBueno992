@@ -1,1 +1,8 @@
 @import 'core/Reset';
+
+.page {
+  background-image: url(/src/images/background.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

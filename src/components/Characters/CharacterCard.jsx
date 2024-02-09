@@ -1,14 +1,11 @@
 import '../../scss/layout/CharacterCard.scss';
+import sinImg from '../../images/sinImg.png';
 
 function CharacterCard({ data }) {
   return (
     <article className="card" id={data.id}>
       <img
-        src={
-          data.image !== ''
-            ? data.image
-            : 'https://th.bing.com/th/id/OIG1.2juI_WcYDZdweNjbu3qx?pid=ImgGn'
-        }
+        src={data.image !== '' ? data.image : sinImg}
         alt={data.name}
         className="card__image"
       />
