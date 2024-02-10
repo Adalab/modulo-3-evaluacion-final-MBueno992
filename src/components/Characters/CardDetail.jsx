@@ -12,6 +12,7 @@ function CardDetail({ data }) {
     Ravenclaw: RavenclawShield,
     Hufflepuff: HufflepuffShield,
   };
+  const nickNames = data.alternateNames.join(', ');
 
   return (
     <article key={data.id} className={`cardDetail ${data.house}`}>
@@ -22,6 +23,12 @@ function CardDetail({ data }) {
       />
       <div className="cardDetail__text">
         <h2 className="cardDetail__text--name">{data.name}</h2>
+        {nickNames !== '' && (
+          <p className="cardDetail__text--prop">
+            Otros nombres: <span>{nickNames}</span>
+          </p>
+        )}
+
         <p className="cardDetail__text--prop">
           Especie: <span>{data.specie}</span>
         </p>
@@ -43,7 +50,6 @@ function CardDetail({ data }) {
         {data.house !== '' && (
           <>
             <p className="cardDetail__text--prop">
-              {' '}
               Casa: <span>{data.house}</span>
             </p>
             <img
@@ -53,14 +59,6 @@ function CardDetail({ data }) {
             />
           </>
         )}
-        {/* <p className="cardDetail__text--prop">
-          Casa: <span>{data.house}</span>
-        </p>
-        <img
-          src={data.house !== '' ? imgShield[data.house] : ''}
-          alt={data.house !== '' ? `Escudo de ${data.house}` : ''}
-          className="cardDetail__shield"
-        /> */}
       </div>
     </article>
   );

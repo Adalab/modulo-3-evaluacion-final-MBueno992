@@ -15,13 +15,13 @@ function Filters({
     <form className="filters">
       <FilterByName handleName={handleName} filterName={filterName} />
       <FilterByHouse handleHouse={handleHouse} />
-      <div className="filters__reset">
+      <div className="filters__contain">
         <FilterByGender
           handleGender={handleGender}
           filterGender={filterGender}
         />
         <button
-          className="filters__reset--btn"
+          className="filters__contain--resetBtn"
           onClick={(ev) => {
             handleReset(ev);
           }}

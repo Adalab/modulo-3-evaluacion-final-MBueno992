@@ -6,6 +6,7 @@ const apiData = () => {
         const characterData = {
           id: character.id,
           name: character.name,
+          alternateNames: character.alternate_names,
           specie: character.species,
           gender: character.gender,
           house: character.house,

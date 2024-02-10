@@ -20,9 +20,9 @@
       rgba(240, 179, 13, 0.873) 60%
     );
     &:hover {
-      animation: btnReset 0.3s ease 0s 1 normal forwards;
+      animation: btnReturn 0.3s ease 0s 1 normal forwards;
 
-      @keyframes btnReset {
+      @keyframes btnReturn {
         0% {
           box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
           transform: scale(1) translateX(100px);
