@@ -4,6 +4,7 @@ import ravenclaw from '../images/ravenclaw.png';
 import hufflepuff from '../images/hufflepuff.png';
 import hogwarts from '../images/hogwarts.png';
 import shield from '../images/escudo.png';
+import harryPotter from '../images/harryPotter.png';
 import '../scss/layout/Header.scss';
 
 function Header() {
@@ -16,7 +17,7 @@ function Header() {
         </div>
         <div className="header__houses--school">
           <img src={shield} alt="Hogwarts Shield" />
-          <img src={hogwarts} alt="Hogwarts" />
+          <img src={harryPotter} alt="Hogwarts" />
         </div>
         <div className="header__houses--flag">
           <img src={ravenclaw} alt="ravenclaw house" />
