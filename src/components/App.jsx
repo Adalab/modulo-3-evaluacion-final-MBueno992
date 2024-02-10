@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import CharacterDetail from './Characters/CharacterDetail';
 import local from '../services/localStorage';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -42,6 +43,12 @@ function App() {
       char.name.toLowerCase().includes(filterName.toLowerCase())
     )
     .filter((char) => char.house === filterHouse)
+    .map((char) => {
+      if (!char.house && !char.wizard) {
+        return { ...char, house: 'Muggle' };
+      }
+      return char;
+    })
     .filter((char) => {
       if (filterGender === 'female') {
         return char.gender === 'female';
@@ -96,6 +103,7 @@ function App() {
           element={<CharacterDetail data={characters} />}
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

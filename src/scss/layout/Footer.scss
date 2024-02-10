@@ -1,0 +1,43 @@
+.footer {
+  height: 100px;
+  background-color: #062131;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &__shield {
+    width: 50px;
+  }
+  &__text {
+    font-size: 1.2rem;
+    color: white;
+    width: 220px;
+    text-align: center;
+    font-style: italic;
+    @media (min-width: 768px) {
+      width: 300px;
+      font-weight: bold;
+    }
+  }
+  &__nav {
+    color: white;
+    font-size: 1.2rem;
+    &--list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      list-style: none;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    &--logo {
+      width: 20px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+  }
+}
