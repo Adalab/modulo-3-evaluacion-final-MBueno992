@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterByName({ handleName, filterName }) {
   const handleEnter = (ev) => {
     if (ev.key === 'Enter') {
@@ -22,5 +24,10 @@ function FilterByName({ handleName, filterName }) {
     </label>
   );
 }
+
+FilterByName.propTypes = {
+  handleName: PropTypes.func,
+  filterName: PropTypes.string,
+};
 
 export default FilterByName;

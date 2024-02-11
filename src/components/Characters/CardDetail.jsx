@@ -4,6 +4,7 @@ import SlytherinShield from '../../images/SlytherinShield.png';
 import RavenclawShield from '../../images/RavenclawShield.png';
 import HufflepuffShield from '../../images/HufflepuffShield.png';
 import '../../scss/layout/CardDetails.scss';
+import PropTypes from 'prop-types';
 
 function CardDetail({ data }) {
   const imgShield = {
@@ -63,5 +64,8 @@ function CardDetail({ data }) {
     </article>
   );
 }
+CardDetail.propTypes = {
+  data: PropTypes.array,
+};
 
 export default CardDetail;

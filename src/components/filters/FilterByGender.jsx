@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterByGender({ handleGender, filterGender }) {
   return (
     <fieldset className="filters__gender">
@@ -27,5 +29,10 @@ function FilterByGender({ handleGender, filterGender }) {
     </fieldset>
   );
 }
+
+FilterByGender.propTypes = {
+  handleGender: PropTypes.func,
+  filterGender: PropTypes.string,
+};
 
 export default FilterByGender;

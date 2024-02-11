@@ -1,6 +1,7 @@
 import CharacterCard from './CharacterCard';
 import '../../scss/layout/CharacterList.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function CharacterList({ data, filterName }) {
   if (data.length === 0) {
@@ -20,12 +21,16 @@ function CharacterList({ data, filterName }) {
       </li>
     );
   });
-
   return (
     <section className="characters">
       <ul className="characters__list">{dataList}</ul>
     </section>
   );
 }
+
+CharacterList.propTypes = {
+  data: PropTypes.array,
+  filterName: PropTypes.string,
+};
 
 export default CharacterList;

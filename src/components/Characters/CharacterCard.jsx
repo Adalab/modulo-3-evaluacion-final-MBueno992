@@ -1,5 +1,6 @@
 import '../../scss/layout/CharacterCard.scss';
 import sinImg from '../../images/noImg.png';
+import PropTypes from 'prop-types';
 
 function CharacterCard({ data, style }) {
   return (
@@ -16,5 +17,10 @@ function CharacterCard({ data, style }) {
     </article>
   );
 }
+
+CharacterCard.propTypes = {
+  data: PropTypes.object,
+  style: PropTypes.string,
+};
 
 export default CharacterCard;

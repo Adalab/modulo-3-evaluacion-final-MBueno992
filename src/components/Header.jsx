@@ -2,7 +2,6 @@ import gryffindor from '../images/gryffindor.png';
 import slytherin from '../images/slytherin.png';
 import ravenclaw from '../images/ravenclaw.png';
 import hufflepuff from '../images/hufflepuff.png';
-import hogwarts from '../images/hogwarts.png';
 import shield from '../images/escudo.png';
 import harryPotter from '../images/harryPotter.png';
 import '../scss/layout/Header.scss';

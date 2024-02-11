@@ -1,4 +1,3 @@
-// Fichero src/components/App.jsx
 import { useEffect, useState } from 'react';
 import '../scss/App.scss';
 import apiData from '../services/api';
@@ -42,12 +41,16 @@ function App() {
     .filter((char) =>
       char.name.toLowerCase().includes(filterName.toLowerCase())
     )
-    .filter((char) => char.house === filterHouse)
-    .map((char) => {
-      if (!char.house && !char.wizard) {
-        return { ...char, house: 'Muggle' };
+    .filter((char) => {
+      if (!char.house) {
+        if (!char.wizard) {
+          return filterHouse === 'Muggles';
+        } else {
+          return filterHouse === 'Otros magos';
+        }
+      } else {
+        return char.house === filterHouse;
       }
-      return char;
     })
     .filter((char) => {
       if (filterGender === 'female') {

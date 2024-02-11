@@ -12,6 +12,7 @@ const apiData = () => {
           house: character.house,
           alive: character.alive,
           image: character.image,
+          wizard: character.wizard,
         };
         return characterData;
       });
