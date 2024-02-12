@@ -5,13 +5,12 @@ import CharacterList from './Characters/CharacterList';
 import Filters from './filters/Filters';
 import { Route, Routes } from 'react-router-dom';
 import CharacterDetail from './Characters/CharacterDetail';
-import local from '../services/localStorage';
 import Header from './Header';
 import Footer from './Footer';
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [filterName, setFilterName] = useState(local.get('name', ''));
+  const [filterName, setFilterName] = useState('');
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
   const [filterGender, setFilterGender] = useState('');
 
@@ -20,10 +19,6 @@ function App() {
       setCharacters(data);
     });
   }, []);
-
-  useEffect(() => {
-    local.set('name', filterName);
-  });
 
   const handleName = (value) => {
     setFilterName(value);

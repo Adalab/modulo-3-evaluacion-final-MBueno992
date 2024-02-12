@@ -37,8 +37,3 @@ CharacterDetail.propTypes = {
 };
 
 export default CharacterDetail;
-
-// useEffect(() => {
-//   const character = data.find((char) => char.id === urlId);
-//   setCardData(character);
-// }, [data, urlId]);
